@@ -1,10 +1,10 @@
 package com.lix;
 
 
+import com.lix.Two.Two1Config;
+import com.lix.aop.MathCalculator;
 import com.lix.bean.Person;
-import com.lix.config.MainConfig;
-import com.lix.config.MainConfigAutowire;
-import com.lix.config.MainConfigOfLifeCycle;
+import com.lix.config.*;
 import com.lix.web.controller.UserController;
 import com.lix.web.service.UserService;
 import com.test.User;
@@ -18,25 +18,28 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.Map;
 
 public class ApplicationMain {
-    static AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfLifeCycle.class);
+    static AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ExtConfig.class);
 
     public static void main(String[] args) {
-        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        /*UserController bean = applicationContext.getBean(UserController.class);
+        bean.insert();*/
+       /* MathCalculator bean = applicationContext.getBean(MathCalculator.class);
+        bean.div(2,2);*/
+        //String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
         //Person person = applicationContext.getBean("person", Person.class);//
-        String[] beanNamesForType = applicationContext.getBeanNamesForType(BeanPostProcessor.class, true, false);
+       /* String[] beanNamesForType = applicationContext.getBeanNamesForType(BeanPostProcessor.class, true, false);
         for (String s : beanNamesForType) {
             System.out.println(s);
-        }
+        }*/
         /*UserController bean = applicationContext.getBean(UserController.class);
         bean.test();*/
        /* for (String beanDefinitionName : beanDefinitionNames) {
             System.out.println(beanDefinitionName);
         }*/
-        //test1();
+        test1();
       /*Person bean = applicationContext.getBean(Person.class);
         Person bean2 = applicationContext.getBean(Person.class);
         System.out.println(bean == bean2);*/
-
     }
 
     private static void test1() {
