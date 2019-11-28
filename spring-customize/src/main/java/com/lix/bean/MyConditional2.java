@@ -1,5 +1,6 @@
 package com.lix.bean;
 
+import javafx.scene.control.ContentDisplay;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
@@ -21,6 +22,7 @@ public class MyConditional2 implements Condition {
             System.out.println(beanDefinitionName);
         }*/
         //获取运行环境
+        System.out.println(Condition.class);
         Environment environment = context.getEnvironment();
         String property = environment.getProperty("os.name");
         System.out.println(property + "判断");
