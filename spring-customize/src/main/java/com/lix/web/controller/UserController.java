@@ -13,6 +13,11 @@ public class UserController {
     @Autowired(required = false)
     private UserService userService2;
 
+
+
+    public void insert(){
+        userService2.insertUser();
+    }
     public void test() {
         System.out.println(userService2);
         userService2.test();
